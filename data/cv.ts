@@ -9,7 +9,8 @@ export const cvData: CVData = {
   },
   about: {
     summary: "I am a Netherlands-based growth engineer and marketer, bridging the gap between technical implementation and strategic business goals. With over 4 years of experience across fast-growing scale-ups and agile startups, I specialize in building automated systems and integrating AI into operational workflows.",
-    now: "Final month of my Master's at UvA. Currently completing my thesis on AI advisory systems."
+    now: "Final month of my Master's at UvA. Currently completing my thesis on AI advisory systems.",
+    image: "/nickpicture.png"
   },
   highlights: [
     { title: "AI Compliance Advisor", subtitle: "Legal Tech automation for freelance risk assessment" },
