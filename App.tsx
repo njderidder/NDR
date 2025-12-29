@@ -332,19 +332,40 @@ export default function App() {
 
         {/* About */}
         <section id="about" className="py-24 container mx-auto px-6">
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 block">About</span>
-            <TextReveal text={cvData.about.summary} className="text-2xl md:text-3xl font-medium leading-relaxed mb-8" />
-            
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-4 bg-muted/50 border border-border p-4 rounded-xl"
-            >
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm font-medium">{cvData.about.now}</span>
-            </motion.div>
+          <div className="grid md:grid-cols-[1fr_300px] gap-12 items-center">
+            <div className="max-w-3xl order-2 md:order-1">
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 block">About</span>
+              <TextReveal text={cvData.about.summary} className="text-2xl md:text-3xl font-medium leading-relaxed mb-8" />
+              
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-4 bg-muted/50 border border-border p-4 rounded-xl"
+              >
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm font-medium">{cvData.about.now}</span>
+              </motion.div>
+            </div>
+
+             {/* Profile Picture */}
+             {cvData.about.image && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="order-1 md:order-2 flex justify-center md:justify-end"
+              >
+                <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl">
+                    <img 
+                      src={cvData.about.image} 
+                      alt="Nick de Ridder" 
+                      className="w-full h-full object-cover"
+                    />
+                </div>
+              </motion.div>
+            )}
           </div>
         </section>
 
