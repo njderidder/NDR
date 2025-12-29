@@ -49,6 +49,7 @@ export interface CVData {
   about: {
     summary: string;
     now: string;
+    image?: string;
   };
   highlights: Array<{ title: string; subtitle: string }>;
   experience: Experience[];
